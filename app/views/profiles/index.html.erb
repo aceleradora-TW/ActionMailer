@@ -1,0 +1,42 @@
+<div class="portfolio">
+  <div class="avatar">
+  </div>
+
+  <div class="nome">
+    <%= @profile.name %>
+  </div>
+
+  <div class="">
+    <p>Olá, meu nome é <b><%=@profile.name %></b> e sou freelancer em Ruby.</p>
+  </div>
+
+  <div class="quadros">
+    Biografia
+    <p>
+      <%= @profile.bio %>
+    </p>
+  </div>
+
+  <div class="quadros">
+    Skills
+    <ul>
+      <% @profile.skills.each do |skill| %>
+      <li class="skill"><%= skill.name %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div>
+    Jobs
+    <div class="">
+      <% @profile.jobs.each do |job| %>
+      <div class="column">
+        <%= image_tag job.img_job.url(:thumb) %></li>
+        <p><%= job.title %></p>
+      </div>
+      <% end %>
+      <!--<%= link_to "New Job", controller: "jobs", action: "new", id: @profile %>-->
+    </div>
+  </div>
+
+</div>
